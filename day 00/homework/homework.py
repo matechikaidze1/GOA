@@ -12,6 +12,7 @@ forward(200)
 left(90)
 forward(70)
 color("yellow")
+
 left(90)
 forward(100)
 right(90)
