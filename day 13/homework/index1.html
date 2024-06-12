@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordered and Unordered Lists</title>
+</head>
+<body>
+    <h1>Ordered and Unordered Lists Example</h1>
+    
+    <h2>Ordered List:</h2>
+    <ol>
+        <li>ვაშლი</li>
+        <li>ბანანი</li>
+        <li>ანანასი</li>
+    </ol>
+
+    <h2>Unordered List:</h2>
+    <ul>
+        <li>კომბოსტო</li>
+        <li>სტაფილო</li>
+        <li>ჭარხალი</li>
+    </ul>
+
+    <dialog id="dialog">
+        <h2>დიალოგი</h2>
+        <p>მე უნდა წავიდე მაღაზიაში ხილ-ბოსტნეულის მოსატანად.</p>
+        <button id="closeDialog">Close</button>
+    </dialog>
+
+    <button id="showDialog">Show Dialog</button>
+
+    <script>
+        const showDialogButton = document.getElementById('showDialog');
+        const dialog = document.getElementById('dialog');
+        const closeDialogButton = document.getElementById('closeDialog');
+
+        showDialogButton.addEventListener('click', () => {
+            dialog.showModal();
+        });
+
+        closeDialogButton.addEventListener('click', () => {
+            dialog.close();
+        });
+    </script>
+</body>
+</html>
