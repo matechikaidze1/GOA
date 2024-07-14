@@ -2,7 +2,7 @@ family_list = ['მათე', 'ზურა', 'მადონა']
 
 numbers2 = []
 for i in range(1, 11):
-    numbers.append(i)
+    numbers2.append(i)
 
 numbers2 = list(range(10, 21))
 
