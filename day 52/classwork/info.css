@@ -1,0 +1,14 @@
+#parent {
+    background-color: green;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 300px;
+    top: 200px;
+}
+
+/* 
+translate - იღებს 2 მნიშვნელობას: x,y შესაბამისად უცვლის პოზიციას
+scale - უცვლის ელემენტს ზომაც მნიშვნელობის შესაბამისად
+rotate - აბრუნებს ელემენტს გადაცემული ერთეულით: გრადუსებით
+/
