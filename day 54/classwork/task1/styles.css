@@ -1,0 +1,22 @@
+@keyframes moveAndChangeColor {
+    0% {
+        background-color: red;
+        transform: translateX(0);
+    }
+    50% {
+        background-color: yellow;
+        transform: translateX(50%);
+    }
+    100% {
+        background-color: blue;
+        transform: translateX(100%);
+    }
+}
+
+.animated-box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: moveAndChangeColor;
+    animation-duration: 4s;
+}
