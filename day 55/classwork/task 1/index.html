@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Navigation</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #333;
+            color: #fff;
+            padding: 10px;
+        }
+        nav ul {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px;
+        }
+        nav a:hover {
+            background: #000000;
+        }
+        .account-bar {
+            background: #444;
+            padding: 8px;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+        .account-bar:hover {
+            background: #666;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div>Company Name</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <a href="#" class="account-bar">Create an Account</a>
+    </nav>
+</body>
+</html>
