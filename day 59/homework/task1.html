@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my epic homework</title>
+</head>
+<body>
+    <p id="myParagraph">boo</p>
+    <button id="showText">click to show text</button>
+
+    <script>
+        document.getElementById('showText').addEventListener('click', function() {
+            const paragraph = document.getElementById('myParagraph');
+            const textContent = paragraph.textContent;
+            alert(textContent);
+        });
+    </script>
+</body>
+</html>
