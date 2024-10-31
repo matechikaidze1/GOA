@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sigma list</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #list {
+            margin-top: 20px;
+            list-style-type: none;
+            padding: 0;
+        }
+        #list li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>my epic list</h1>
+    <input type="text" id="itemInput" placeholder="add a new thing">
+    <button id="addButton">add</button>
+
+    <ul id="list"></ul>
+
+    <script>
+        const addButton = document.getElementById('addButton');
+        const itemInput = document.getElementById('itemInput');
+        const list = document.getElementById('list');
+
+        addButton.addEventListener('click', () => {
+            const newItemText = itemInput.value.trim();
+            if (newItemText) {
+                const newItem = document.createElement('li');
+                newItem.textContent = newItemText;
+                list.appendChild(newItem);
+                itemInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
