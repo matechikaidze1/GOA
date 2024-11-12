@@ -24,12 +24,12 @@ def count_area(shape, *dimensions):
     
     else:
         return "unrecongizable shape"
-
-
+    
+    
 # ----------------------------------------------------
 
 print(count_area("rectangle", 5, 10))
 
-print(count_area("circle", 7)) 
+print(count_area("circle", 5)) 
 
 print(count_area("triangle", 10, 5, 6))
