@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>card design (responsive)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>card design with filter and sorting</h1>
+    <div class="controls">
+      <button id="filterBtn">filter below average</button>
+      <button id="sortAsc">sort ascending</button>
+      <button id="sortDesc">sort descending</button>
+      <button id="sortRandom">sort random</button>
+    </div>
+  </header>
+  <main id="cardContainer">
+    <div class="card" data-rating="4.5">
+      <h2>card 1</h2>
+      <p>rating: <span class="rating">4.5</span></p>
+    </div>
+    <div class="card" data-rating="3.2">
+      <h2>card 2</h2>
+      <p>rating: <span class="rating">3.2</span></p>
+    </div>
+    <div class="card" data-rating="5.0">
+      <h2>card 3</h2>
+      <p>rating: <span class="rating">5.0</span></p>
+    </div>
+    <div class="card" data-rating="2.8">
+      <h2>card 4</h2>
+      <p>rating: <span class="rating">2.8</span></p>
+    </div>
+    <div class="card" data-rating="4.0">
+      <h2>card 5</h2>
+      <p>rating: <span class="rating">4.0</span></p>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
