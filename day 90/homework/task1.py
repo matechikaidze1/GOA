@@ -13,5 +13,5 @@ def manual_sort(lst):
 
 unsorted_list = [3, 2, 9, 4, 5, 1, 6, 8, 7]
 sorted_list = manual_sort(unsorted_list)
-print("Unsorted List:", unsorted_list)
-print("Sorted List:", sorted_list)
+print("unsorted list:", unsorted_list)
+print("sorted list:", sorted_list)
