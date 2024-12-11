@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>number counter</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin: 50px; }
+    #counter {
+      font-size: 2em;
+      margin: 20px auto;
+      padding: 20px;
+      width: 100px;
+      border: 2px solid #151581;
+      background-color: #4c4cd6;
+      border-radius: 10px;
+      color: white;
+    }
+    button { padding: 10px; margin: 5px; font-size: 1em; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>counter</h1>
+  <div id="counter">0</div>
+  <button onclick="update(1)">increase</button>
+  <button onclick="update(-1)">decrease</button>
+  <button onclick="reset()">reset</button>
+
+  <script>
+    let count = 0;
+    const counter = document.getElementById('counter');
+
+    const update = (value) => {
+      count += value;
+      counter.textContent = count;
+      changeColor();
+    };
+
+    const reset = () => {
+      count = 0;
+      counter.textContent = count;
+      changeColor();
+    };
+
+    const changeColor = () => {
+      if (count > 0) {
+        counter.style.color = "lime";
+      } else if (count < 0) {
+        counter.style.color = "red";
+      } else {
+        counter.style.color = "white";
+      }
+    };
+  </script>
+</body>
+</html>

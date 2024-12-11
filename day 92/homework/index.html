@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>password strength checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: center;
+        }
+
+        .form-container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .password-box {
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input[type="password"].weak {
+            border-color: red;
+        }
+
+        input[type="password"].medium {
+            border-color: yellow;
+        }
+
+        input[type="password"].strong {
+            border-color: lime;
+        }
+
+        .strength-indicator {
+            text-align: left;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>create a strong password</h2>
+    <form>
+        <div class="password-box">
+            <input type="password" id="password" placeholder="enter your password">
+            <div class="strength-indicator" id="strength-indicator"></div>
+        </div>
+    </form>
+</div>
+
+<script>
+    const passwordInput = document.getElementById('password');
+    const strengthIndicator = document.getElementById('strength-indicator');
+
+    passwordInput.addEventListener('input', () => {
+        const password = passwordInput.value;
+        let strength = '';
+
+        if (password.length >= 10 && /[A-Z]/.test(password) && /[0-9]/.test(password) && /[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+            strength = 'strong';
+            strengthIndicator.textContent = 'strong';
+        } else if (password.length >= 8 && /[A-Z]/.test(password) && /[0-9]/.test(password)) {
+            strength = 'medium';
+            strengthIndicator.textContent = 'medium';
+        } else if (password.length >= 6) {
+            strength = 'weak';
+            strengthIndicator.textContent = 'weak';
+        } else {
+            strengthIndicator.textContent = '';
+        }
+
+        passwordInput.className = strength;
+    });
+</script>
+
+</body>
+</html>

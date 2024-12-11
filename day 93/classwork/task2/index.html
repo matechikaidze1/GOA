@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>counter</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 50px;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    h1 {
+      color: #151581;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    #counter {
+      font-size: 3em;
+      margin: 20px auto;
+      padding: 20px;
+      width: 120px;
+      text-align: center;
+      border: 3px solid #151581;
+      background-color: #4c4cd6;
+      border-radius: 15px;
+      color: rgb(255, 255, 255);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+    button, input {
+      padding: 10px 15px;
+      margin: 8px;
+      font-size: 1em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    button:hover {
+      transform: translateY(-2px);
+    }
+    button:active {
+      transform: translateY(1px);
+    }
+    button {
+      background-color: #151581;
+      color: rgb(255, 255, 255);
+    }
+    button:hover {
+      background-color: #3c3cb3;
+    }
+    input[type="number"] {
+      width: 150px;
+      padding: 8px;
+      border: 1px solid #000000;
+      border-radius: 5px;
+      text-align: center;
+    }
+    input:focus {
+      outline: none;
+      border-color: #151581;
+      box-shadow: 0 0 5px rgba(21, 21, 129, 0.5);
+    }
+    
+  </style>
+</head>
+<body>
+  <h1>counter</h1>
+  <div id="counter">0</div>
+  <button onclick="update(1)">increase</button>
+  <button onclick="update(-1)">decrease</button>
+  <button onclick="reset()">reset</button>
+  <br>
+  <input id="numberInput" type="number" placeholder="Enter your number:" />
+  <button onclick="addCustom()">add</button>
+
+  <script>
+    let count = 0;
+    const counter = document.getElementById('counter');
+
+    const update = (value) => {
+      count += value;
+      updateDisplay();
+    };
+
+    const reset = () => {
+      if (count === 0) {
+        alert("the counter is already on 0.");
+      } else {
+        count = 0;
+        updateDisplay();
+      }
+    };
+
+    const addCustom = () => {
+      const input = document.getElementById('numberInput');
+      const value = parseInt(input.value);
+      if (!isNaN(value) && value <= 100) {
+        count += value;
+        updateDisplay();
+      } else {
+        alert("enter a number below 100.");
+      }
+      input.value = "";
+    };
+
+    const updateDisplay = () => {
+      counter.textContent = count;
+      if (count > 0) {
+        counter.style.color = "lime";
+      } else if (count < 0) {
+        counter.style.color = "red";
+      } else {
+        counter.style.color = "white";
+      }
+    };
+  </script>
+</body>
+</html>
