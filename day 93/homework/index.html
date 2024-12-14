@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cookie clickr</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #5e5e5e;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #ffb52a;
+            font-size: 36px;
+        }
+
+        .currency-box {
+            background-color: #ffa600;
+            padding: 20px;
+            border: 2px solid #4c3258;
+            border-radius: 10px;
+            width: 150px;
+            margin: 20px auto;
+        }
+
+        .currency-box p {
+            font-size: 24px;
+            margin: 5px 0;
+        }
+
+        .currency-box span {
+            font-weight: bold;
+        }
+
+        #cookie-button {
+            font-size: 30px;
+            padding: 20px 40px;
+            cursor: pointer;
+            background-color: #ffbb33;
+            border: none;
+            border-radius: 10px;
+            margin: 20px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        #cookie-button:hover {
+            background-color: #ff9933;
+            transform: scale(1.1);
+        }
+
+        .gadget-explanation {
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            margin: 20px auto;
+            color: #333;
+        }
+
+        .gadget-explanation p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .upgrade-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .upgrade-container .button {
+            font-size: 18px;
+            padding: 15px 25px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+            width: 150px;
+        }
+
+        .upgrade-container .button:hover {
+            background-color: #1da524;
+        }
+
+        .button:disabled {
+            background-color: #6b4141;
+            cursor: not-allowed;
+        }
+
+        .upgrade-container .cost {
+            font-size: 16px;
+            color: #00ff00;
+        }
+
+        @media (max-width: 600px) {
+            .currency-box {
+                width: 120px;
+            }
+
+            .upgrade-container {
+                flex-direction: column;
+            }
+
+            .upgrade-container .button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>cookie clicker!! </h1>
+    <button id="cookie-button">🍪</button>
+
+
+    <div class="currency-box">
+        <p>Cookies: <span id="cookie-count">0</span></p>
+    </div>
+    <div class="currency-box">
+        <p>Gold: <span id="gold-count">0</span></p>
+    </div>
+
+    <h2>gadgets:</h2>
+
+    <div class="gadget-explanation">
+        <p><strong>bigger finger:</strong> +1 cookie on a click each purchase</p>
+        <p><strong>better mines:</strong> +1 gold on a click each purchase</p>
+        <p><strong>double cookies:</strong> doubles your cookie clicking</p>
+    </div>
+
+    <div class="upgrade-container">
+        <div>
+            <button id="buy-finger" class="button">bigger finger</button>
+            <p class="cost">price: <span id="finger-cost">50</span> gold</p>
+        </div>
+        <div>
+            <button id="buy-mines" class="button">better mines</button>
+            <p class="cost">price: <span id="mines-cost">100</span> cookies</p>
+        </div>
+        <div>
+            <button id="buy-double-cookies" class="button">double cookies</button>
+            <p class="cost">price: <span id="double-cookies-cost">200</span> gold</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
