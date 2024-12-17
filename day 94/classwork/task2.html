@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>button</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f0f0f0;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      color: white;
+      background: linear-gradient(90deg, red, orange, yellow, green, blue, purple, pink);
+      background-size: 400% 400%;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      animation: colorShift 3s infinite alternate;
+    }
+
+    @keyframes colorShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button>sigma</button>
+</body>
+</html>
