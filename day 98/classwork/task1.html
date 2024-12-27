@@ -6,11 +6,28 @@
   <title>email filter</title>
 </head>
 <body>
-  <h1>email filter by subject</h1>
+  <h1>email filter and add your email</h1>
+
   <input type="text" id="subjectFilter" placeholder="enter subject to filter" />
   <button onclick="filterEmails()">filter emails</button>
 
   <div id="emailList"></div>
+
+  <hr>
+
+  <h2>your email</h2>
+  <form id="emailForm" onsubmit="addEmail(event)">
+    <label for="subject">subject:</label>
+    <input type="text" id="subject" required /><br><br>
+    
+    <label for="content">content:</label>
+    <textarea id="content" required></textarea><br><br>
+    
+    <label for="receivedDate">received date:</label>
+    <input type="date" id="receivedDate" required /><br><br>
+    
+    <button type="submit">add email</button>
+  </form>
 
   <script>
     const emails = [
@@ -48,6 +65,28 @@
         });
       }
     }
+
+    function addEmail(event) {
+      event.preventDefault();
+
+      const subject = document.getElementById('subject').value;
+      const content = document.getElementById('content').value;
+      const receivedDate = document.getElementById('receivedDate').value;
+
+      const newEmail = {
+        subject: subject,
+        content: content,
+        receivedDate: receivedDate
+      };
+
+      emails.push(newEmail);
+
+      document.getElementById('emailForm').reset();
+
+      filterEmails();
+    }
+
+    filterEmails();
   </script>
 </body>
 </html>
