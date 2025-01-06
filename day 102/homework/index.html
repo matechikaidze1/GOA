@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .output {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>key ID</h1>
+    <p>click the button to generate an ID or enter your own:</p>
+
+    <div>
+        <button id="generateButton">generate key ID</button>
+        <input type="text" id="customKey" placeholder="enter your key ID">
+    </div>
+
+    <p class="output" id="output">Key-ID: value-index</p>
+
+    <script>
+        function generateKeyID() {
+            return Math.random().toString(36).substring(2, 10).toUpperCase();
+        }
+
+        document.getElementById("generateButton").addEventListener("click", function () {
+            const customKey = document.getElementById("customKey").value.trim();
+            const keyID = customKey || generateKeyID();
+            document.getElementById("output").textContent = `Key-ID: ${keyID}, value-index`;
+        });
+    </script>
+</body>
+</html>
