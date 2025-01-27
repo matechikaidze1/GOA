@@ -60,11 +60,11 @@ class fantasyBook extends book {
     }
 
     get summary() {
-        return "${super.summary} Dive into the magical world of ${this.worldName}, where the magic system is based on ${this.magicSystem}.";
+        return "${super.summary} this is a magical world of ${this.worldName}, where the magic system is based on ${this.magicSystem}.";
     }
 
     magicFactor() {
-        return "The magic system of this book is ${this.magicSystem}, making it a must-read for fantasy lovers.";
+        return "this book is a ${this.magicSystem} type, which makes it really interesting";
     }
 }
 
