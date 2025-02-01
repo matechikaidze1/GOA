@@ -1,0 +1,1 @@
+# i havent attended day 113 and 114 and the recordings arent uploaded, i will try to learn the new things from the internet and i'll do the homework
