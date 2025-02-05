@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        input { margin: 10px; padding: 5px; }
+        button { margin: 5px; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>mini calculator</h1>
+    <input type="number" id="num1" placeholder="first number">
+    <input type="number" id="num2" placeholder="second number">
+    <br>
+    <button onclick="calculate('add')">plus</button>
+    <button onclick="calculate('subtract')">minus</button>
+    <button onclick="calculate('multiply')">multiply</button>
+    <button onclick="calculate('divide')">divide</button>
+    <h2>result: <span id="result">0</span></h2>
+    
+    <script>
+        class Calculator {
+            static count = 0;
+    
+            static add(a, b) {
+                this.count++;
+                return a + b;
+            }
+    
+            static subtract(a, b) {
+                this.count++;
+                return a - b;
+            }
+    
+            static multiply(a, b) {
+                this.count++;
+                return a * b;
+            }
+    
+            static divide(a, b) {
+                if (b === 0) return "cant divide by zero";
+                this.count++;
+                return a / b;
+            }
+    
+            static getCount() {
+                return this.count;
+            }
+        }
+    
+        function calculate(operation) {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let result;
+    
+            if (isNaN(num1) || isNaN(num2)) {
+                result = "invalid characters";
+            } else {
+                switch(operation) {
+                    case 'add': result = Calculator.add(num1, num2); break;
+                    case 'subtract': result = Calculator.subtract(num1, num2); break;
+                    case 'multiply': result = Calculator.multiply(num1, num2); break;
+                    case 'divide': result = Calculator.divide(num1, num2); break;
+                }
+            }
+    
+            document.getElementById("result").innerText = result;
+            document.getElementById("count").innerText = Calculator.getCount();
+        }
+    </script>
+</body>
+</html>
